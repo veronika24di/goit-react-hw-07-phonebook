@@ -4,8 +4,10 @@ import Button from 'components/Button/Button';
 import styles from './ContactList.module.css';
 import { deleteContact } from 'redux/operations';
 
-export const ContactsList = ({ contacts }) => {
+export const ContactsList = () => {
   const dispatch = useDispatch();
+  const contacts = useSelector(state => state.contacts);
+
   return (
     <ul className={styles.item}>
       {contacts.map(i => {
